@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SpaceX Crew</string>
+    <string name="launcher_transition">launcher_transition</string>
+    <string name="crew_image_transition">crew_image_transition</string>
+</resources>

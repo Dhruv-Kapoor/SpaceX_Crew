@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="crew"
+            type="com.example.spacexcrew.dataClasses.Crew" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivCrewImage"
+            image="@{crew.image}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:id="@+id/crewDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient_grey_to_transparent"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{listener}"
+            android:paddingHorizontal="18dp"
+            android:paddingTop="100dp"
+            android:paddingBottom="26dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@{crew.name}"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                tools:text="Dhruv Kapoor" />
+
+            <ImageView
+                android:id="@+id/ivWikipedia"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tvName"
+                android:layout_alignParentEnd="true"
+                android:adjustViewBounds="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="@{listener}"
+                android:src="@drawable/wikipedia" />
+
+            <TextView
+                android:id="@+id/tvAgency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvName"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:text="@{crew.agency}"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="NASA" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                setStatus="@{crew.status}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvName"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="true"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                tools:text="ACTIVE" />
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
